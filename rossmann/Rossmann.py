@@ -9,11 +9,11 @@ import inflection
 class Rossmann ( object ):
     def __init__ (self):
         self.home_path = ''
-        self.competition_distance_scaler    = pickle.load( open( self.home_path + 'parameters/competition_distance_scaler.pk1', 'rb' ) )
-        self.competition_time_month_scaler  = pickle.load( open( self.home_path + 'parameters/competition_time_month_scaler.pk1', 'rb' ) )
-        self.promo_time_week_scaler         = pickle.load( open( self.home_path + 'parameters/promo_time_week_scaler.pk1', 'rb' ) )
-        self.year_scaler                    = pickle.load( open( self.home_path + 'parameters/year_scaler.pk1', 'rb' ) )
-        self.store_type_scaler              = pickle.load( open( self.home_path + 'parameters/store_type_scaler.pk1', 'rb' ))
+        self.competition_distance_scaler    = pickle.load( open( self.home_path + 'parameter/competition_distance_scaler.pk1', 'rb' ) )
+        self.competition_time_month_scaler  = pickle.load( open( self.home_path + 'parameter/competition_time_month_scaler.pk1', 'rb' ) )
+        self.promo_time_week_scaler         = pickle.load( open( self.home_path + 'parameter/promo_time_week_scaler.pk1', 'rb' ) )
+        self.year_scaler                    = pickle.load( open( self.home_path + 'parameter/year_scaler.pk1', 'rb' ) )
+        self.store_type_scaler              = pickle.load( open( self.home_path + 'parameter/store_type_scaler.pk1', 'rb' ))
     
     def data_clenning (self, df1):
         
