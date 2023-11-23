@@ -65,7 +65,9 @@ def main():
             predictions['budget'] = budget*predictions['prediction']
             
             #Show Dataframe
-            st.dataframe(predictions, use_container_width= True)
+            st.dataframe(predictions,
+                         #use_container_width= True
+                         )
             
             #converter para excel
             csv = convert_df(predictions)
@@ -89,7 +91,9 @@ def main():
             predictions['budget'] = budget*predictions['prediction']
             
             #Show Dataframe
-            st.dataframe(predictions, use_container_width= True)
+            st.dataframe(predictions,
+                         #use_container_width= True
+                         )
             
             #converter para excel
             csv = convert_df(predictions)
@@ -108,8 +112,9 @@ def main():
 
 def get_predictions(data: str) -> pd.DataFrame:
 
-    url = 'http://localhost:5000/rossmann/predict'
+    #url = 'http://localhost:5000/rossmann/predict'
     #url = 'https://rossmann-api-45ni.onrender.com/rossmann/predict'
+    url = 'https://rossman.onrender.com/rossmann/predict'
     
     headers = {'Content-type': 'application/json'}
     try:
