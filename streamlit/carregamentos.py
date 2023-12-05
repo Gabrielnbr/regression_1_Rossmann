@@ -22,9 +22,12 @@ def load_dataset(store_ids: List[int], test: pd.DataFrame, store: pd.DataFrame) 
         df_test = df_test[df_test['Open'] != 0]
         df_test = df_test[~df_test['Open'].isnull()]
 
-        # Remove a coluna 'Id' do conjunto de dados
-        df_test = df_test.drop('Id', axis=1)
-
+        if 'Id' in df_test.columns:
+            # Remove a coluna 'Id' do conjunto de dados
+            df_test = df_test.drop('Id', axis=1)
+        else:
+            pass
+        
         # Converte o DataFrame resultante em formato JSON
         data = json.dumps(df_test.to_dict(orient='records'))
     else:
@@ -34,8 +37,8 @@ def load_dataset(store_ids: List[int], test: pd.DataFrame, store: pd.DataFrame) 
 
 def get_predictions(data: str) -> pd.DataFrame:
 
-    #url = 'http://localhost:5000/rossmann/predict'
-    url = 'https://rossman.onrender.com/rossmann/predict'
+    url = 'http://localhost:5000/rossmann/predict'
+    #url = 'https://rossman.onrender.com/rossmann/predict'
     
     headers = {'Content-type': 'application/json'}
     try:
@@ -43,9 +46,9 @@ def get_predictions(data: str) -> pd.DataFrame:
         r.raise_for_status()  # Raise an exception for HTTP errors (non-2xx responses)
         
         df_result = pd.DataFrame(r.json(), columns= r.json()[0].keys())
-        df_result = df_result[['store', 'prediction']].groupby('store').sum().reset_index()
         return df_result
     
     except requests.exceptions.RequestException as e:
         st.write(f"Error occurred during prediction: {e}")
         return pd.DataFrame(columns=['store', 'prediction'])
+    
