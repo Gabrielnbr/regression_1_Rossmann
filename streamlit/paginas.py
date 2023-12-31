@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from matplotlib import pyplot as plt
+import plotly_express as px
 import seaborn as sns
 import requests
 import json
@@ -113,11 +114,6 @@ def outra_pg(test: pd.DataFrame, store: pd.DataFrame, train: pd.DataFrame):
         #predictions = predictions[['store', 'sales']].groupby('store').mean().reset_index()
         predictions['budget'] = 0.1*predictions['sales']
         
-        #predictions = mes_dia(predictions, "date")
-        
-        #data_datetime = datetime.strptime(predictions[['mes_dia_max']], "%Y-%m-%d")
-        #predictions['mes_dia_max'] = predictions['mes_dia_max'].dt.strftime("%m-%d")
-        
         
         graficos(predictions)
         
@@ -145,39 +141,12 @@ def outra_pg(test: pd.DataFrame, store: pd.DataFrame, train: pd.DataFrame):
         
 def graficos(data: pd.DataFrame):
     
-    fig, axs = plt.subplots(figsize=[6,6])
+    fig, axs = plt.subplots(figsize=(6,6))
     
     h1_aux1 = data[['store','sales']].groupby('store').mean().reset_index()
     sns.barplot(x='store', y='sales', data=h1_aux1, ax=axs);
+    #fig = px.bar(h1_aux1, x='store', y='sales', color= 'sales')
     
-    plt.tight_layout()
+    #plt.tight_layout()
+    #st.plotly_chart(fig)
     st.pyplot(fig)
-
-def mes_dia(data: pd.DataFrame , coluna) -> pd.DataFrame:
-    
-    if data[coluna].apply(lambda x: isinstance(x, (str,))).all():
-        data_max = data[coluna].max()
-        data_sem_timezone_max = data_max.split('T')[0]
-        
-        data_datetime_max = pd.to_datetime(data_sem_timezone_max)
-        data['mes_dia_max'] = data_datetime_max.strftime("%m-%d")
-        data_datetime_max = pd.to_datetime(data['mes_dia_max'])
-        
-        
-        data_min = data[coluna].min()
-        data_sem_timezone_min = data_min.split('T')[0]
-        
-        data_datetime_min = pd.to_datetime(data_sem_timezone_min)
-        data['mes_dia_min'] = data_datetime_min.strftime("%m-%d")
-        
-        return data
-    
-    else:
-        data_max = data[coluna].max()
-        data_datetime = datetime.strptime(data_sem_timezone, "%Y-%m-%d")
-        data['mes_dia_max'] = data_datetime.strftime("%m-%d")
-        data_min = data[coluna].min()
-        data_datetime = datetime.strptime(data_sem_timezone, "%Y-%m-%d")
-        data['mes_dia_min'] = data_datetime.strftime("%m-%d")
-        
-        return data
