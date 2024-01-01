@@ -38,12 +38,12 @@ def multiselect(test: pd.DataFrame, store: pd.DataFrame, train: pd.DataFrame):
     st.title('Previsão de Vendas')
     
     #slide selection
-    #store_ids = st.slider('Escolha as Lojas', value = [1,1115], key=0)
+    #store_ids = st.slider('Escolha as Lojas', value = [1,1115])
     #store_ids = np.arange(store_ids[0], store_ids[1]+1, 1)
     
-    store_ids = st.multiselect('Escolha as Lojas',test['Store'].unique(), key=5 )
+    store_ids = st.multiselect('Escolha as Lojas',test['Store'].unique())
         
-    if st.button('Predict ', key=4):
+    if st.button('Predict '):
         predictions = get_predictions(load_dataset(store_ids, test, store))
         
         st.write('''
