@@ -1,12 +1,12 @@
 import streamlit as st
 import pandas as pd
-from matplotlib import pyplot as plt
-import plotly_express as px
-import seaborn as sns
-import requests
-import json
-import numpy as np
-from typing import List
+#from matplotlib import pyplot as plt
+#import plotly_express as px
+#import seaborn as sns
+#import requests
+#import json
+#import numpy as np
+#from typing import List
 from carregamentos import get_predictions, load_dataset, convert_df
 from datetime import datetime
 
