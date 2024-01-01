@@ -37,8 +37,8 @@ def load_dataset(store_ids: List[int], test: pd.DataFrame, store: pd.DataFrame) 
 
 def get_predictions(data: str) -> pd.DataFrame:
 
-    url = 'http://localhost:5000/rossmann/predict'
-    #url = 'https://rossman.onrender.com/rossmann/predict'
+    #url = 'http://localhost:5000/rossmann/predict'
+    url = 'https://rossman.onrender.com/rossmann/predict'
     
     headers = {'Content-type': 'application/json'}
     try:
