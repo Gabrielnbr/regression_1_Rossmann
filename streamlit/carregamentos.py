@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import requests
 import json
-import numpy as np
 from typing import List
 
 def convert_df(df):

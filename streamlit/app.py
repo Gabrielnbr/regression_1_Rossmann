@@ -1,10 +1,5 @@
 import streamlit as st
 import pandas as pd
-import requests
-import json
-import pickle
-import numpy as np
-from typing import List
 import paginas as pg
 
 # Streamlit app code
