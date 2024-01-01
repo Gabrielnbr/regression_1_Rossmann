@@ -5,7 +5,7 @@ Este é um projeto com dados extraídos e trabalhados do [Kaggle: Rossmann Store
 
 O Projeto em Produção está na propria nuvem do [Streamlit](https://regression-2022-1-rossmann.streamlit.app/). A API que realiza as predições foi disponibilizada no [Render](https://render.com/) por meio da url https://rossman.onrender.com
 
-Caso queira entender mais minha experiência com o projeto, eu disponibilizei um [Artigo no Medium]()
+Caso queira entender mais minha experiência com o projeto, eu disponibilizei um [Artigo no Medium](https://medium.com/@gabrielnobregalvao/aprendizado-do-projeto-de-previs%C3%A3o-rossmann-group-c33eef1c6855)
 
 # 1.0 Problema de Negócio
 
@@ -24,7 +24,7 @@ Foi realizado o levantamento de algumas premissas que o projeto precisa atender:
 3. Os dias em que as lojas estiveram fechadas serão excluídos da previsão.
 4. A previsão considerará apenas as lojas que tiveram vendas superiores a 0 nos dados disponíveis.
 5. A equipe definiu algumas metas financeiras a serem cumpridas para identificar se o estabelecimento pode ou não ser reformado e qual é o limite máximo do budget:
-   1. Se a média do faturamento previsto for menor do que a média das receitas do mesmo período do ano anterior, então não podemos fazer a reforma; caso contrário podemos fazer a reforma.
+   1. Se a média do faturamento previsto for menor do que a média das faturamento, então não podemos fazer a reforma; caso contrário podemos fazer a reforma.
    2. Se a diferença do faturamento previsto for menor do que 2,5%, pode-se utilizar 7,5% do faturamento total para a reforma. Se estiver entre 2,5% e 5%, utiliza-se 10%; se for superior a 5%, utiliza-se 12,5% do faturamento.
 
 ## 2.1. Descrição dos Dados
@@ -80,16 +80,6 @@ Para criar a solução, foram utilizadas as seguintes ferramentas:
  - Algoritmos de Machine Learning da biblioteca scikit-learn
  - Serviço de Hospedagem em Nuvem do Render. (Back-End)
  - Serviço Streamlit Cloud para aplicação web. (Front-End)
-
-O que tenho que fazer?
-1. Criar uma visualização do dataset de treino com a modificações. ok
-2. Comprar os dois dataset se tem as mesmas estruturas. ok
-3. Se não tiver, entender o poque não tem a mesma estrutura. ok
-4. Modificar a coluna datetime da previsão para date convencional. Ou testar se as duas funcionam de boas.
-5. Fazer os merge entre as duas estruturas? Se fizer o merge.
-6. Colocar os dois dataset na mesma estrutura.
-7. Fazer o primeiro calculo da média geral e colocar em caparação entre os dois blocos.
-8. Fazer esse calculo com filtro de data.
 
 # 4.0 Análise dos Dados
 
