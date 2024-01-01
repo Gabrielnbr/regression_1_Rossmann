@@ -15,7 +15,7 @@ def page_bem_vindo():
     
     st.write(orientacao, unsafe_allow_html = True)
     
-    st.subheader("Contato Profissional", divider='blue')
+    st.subheader("Contato Profissional")
     
     contato = '''
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">                                                                                                    
