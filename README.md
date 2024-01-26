@@ -192,7 +192,7 @@ O aprendizado do projeto foi descrito no Medium para facilitar a leitura.
 <ul class="actions">
     <table>
         <tr>
-            <th><i class="fa-solid fa-folder-tree"></i><a href="https://bit.ly/portfolio-gabriel-nobre"> Portfólio de Projetos</a></th>
+            <th><i class="fa-solid fa-folder-tree"></i><a href="https://bit.ly/portfolio-gabriel-galvao"> Portfólio de Projetos</a></th>
             <th><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/gabriel-nobre-galvao/"> Linkedin</a></th>
             <th><i class="fa-brands fa-medium"></i><a href="https://medium.com/@gabrielnobregalvao"> Medium</a></th>
             <th><i class="fa-brands fa-github"></i><a href="https://github.com/Gabrielnbr"> Git Hub</a></th>
