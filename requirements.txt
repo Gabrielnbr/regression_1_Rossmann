@@ -11,3 +11,4 @@ stack-data==0.2.0
 xgboost==1.6.1
 streamlit-folium==0.7.0
 streamlit==1.15.2
+altair==4.2.0
